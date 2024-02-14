@@ -1,28 +1,56 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-
-
+    compileSdk 33
     defaultConfig {
         applicationId "com.example.android.miwok"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+        testInstrumentationRunnerArguments runnerBuilder: 'de.mannodermaus.junit5.AndroidJUnit5Builder'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
         }
     }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'androidx.test:monitor:1.6.1'
+        }
+    }
+
+    useLibrary "android.test.runner"
+    useLibrary "android.test.base"
+    useLibrary "android.test.mock"
+    namespace 'com.example.android.miwok'
+    testNamespace "com.example.android.miwok.test"
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'com.android.support:design:26.1.0'
-    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'io.reactivex:rxandroid:1.0.1'
+    implementation "androidx.multidex:multidex:2.0.1"
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.10.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
+    debugImplementation 'androidx.test:core:1.4.1-alpha04'
+    androidTestImplementation "androidx.test:monitor:1.4.0"
+    androidTestImplementation "androidx.test.ext:junit:1.2.0-alpha03"
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.0-alpha04"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:3.5.0-alpha04"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.5.1"
 }

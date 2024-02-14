@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/categories/phrases"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "mDefaultTranslation": "Phrases",
+        "mMiwokTranslation": "Phrases",
+        "mImageResourceId": 2131165327,
+        "mAudioResourceId": 2131689481
+      }
+    ]
+  }
+}

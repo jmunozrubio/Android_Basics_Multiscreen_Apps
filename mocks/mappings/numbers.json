@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/categories/numbers"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "mDefaultTranslation": "Numbers",
+        "mMiwokTranslation": "Numbers",
+        "mImageResourceId": 2131165327,
+        "mAudioResourceId": 2131689481
+      }
+    ]
+  }
+}

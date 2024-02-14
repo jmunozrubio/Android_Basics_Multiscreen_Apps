@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/categories/family"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "mDefaultTranslation": "Family",
+        "mMiwokTranslation": "Family",
+        "mImageResourceId": 2131165327,
+        "mAudioResourceId": 2131689481
+      }
+    ]
+  }
+}

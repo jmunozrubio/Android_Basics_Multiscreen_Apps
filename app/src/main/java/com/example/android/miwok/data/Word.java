@@ -1,4 +1,6 @@
-package com.example.android.miwok;
+package com.example.android.miwok.data;
+
+import java.util.Objects;
 
 /**
  * {@link Word} represents a vocabulary word that the user wants to learn.
@@ -92,5 +94,18 @@ public class Word {
      */
     public int getAudioResourceId() {
         return mAudioResourceId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Word word = (Word) o;
+        return mImageResourceId == word.mImageResourceId && mAudioResourceId == word.mAudioResourceId && Objects.equals(mDefaultTranslation, word.mDefaultTranslation) && Objects.equals(mMiwokTranslation, word.mMiwokTranslation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mDefaultTranslation, mMiwokTranslation, mImageResourceId, mAudioResourceId);
     }
 }

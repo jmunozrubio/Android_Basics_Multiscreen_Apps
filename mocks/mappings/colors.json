@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/categories/colors"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "mDefaultTranslation": "Color",
+        "mMiwokTranslation": "Color",
+        "mImageResourceId": 2131165327,
+        "mAudioResourceId": 2131689481
+      }
+    ]
+  }
+}
