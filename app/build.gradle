@@ -11,7 +11,6 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
-        testInstrumentationRunnerArguments runnerBuilder: 'de.mannodermaus.junit5.AndroidJUnit5Builder'
     }
 
     testOptions {
@@ -42,10 +41,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'io.reactivex:rxandroid:1.0.1'
     implementation "androidx.multidex:multidex:2.0.1"
+
+    //Para las pruebas Unitarias
     testImplementation 'org.mockito:mockito-junit-jupiter:5.10.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
     debugImplementation 'androidx.test:core:1.4.1-alpha04'
+
+    //Para las pruebas de integracias
     androidTestImplementation "androidx.test:monitor:1.4.0"
     androidTestImplementation "androidx.test.ext:junit:1.2.0-alpha03"
     androidTestImplementation 'androidx.test:runner:1.5.2'
